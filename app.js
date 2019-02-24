@@ -10,12 +10,8 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 const app = express();
 
-const handleHome = (req, res) => res.send("hello from home 2");
-
-const handleProfile = (req, res) => res.send("You are my profile");
-
-app.use(cookieParser());
-app.use(bodyParser.json());
+app.use(cookieParser()); 
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(helmet());
 app.use(morgan("dev"));
