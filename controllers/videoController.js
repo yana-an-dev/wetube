@@ -2,11 +2,9 @@ export const home = (req, res) =>
     res.render("home", { pageTitle:"Home"});
 
 export const search = (req, res) => {
-    const{
-        query: { term: SearchingBy }
-    } = req;
-    console.log(term);
-    res.render("search", { pageTitle:"Search", SearchingBy});
+   // const searchingby =req.query.term;과 같다. 
+    const {query: { term: searchingBy }} = req;
+    res.render("search", { pageTitle:"Search", searchingBy});
 };
 export const videos =(req, res) => 
     res.render("videos", { pageTitle:"Videos"});
