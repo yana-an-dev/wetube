@@ -1,6 +1,7 @@
-export const home = (req, res) => 
-    res.render("home", { pageTitle:"Home"});
-
+import { videos } from "../db";
+export const home = (req, res) => {
+    res.render("home", { pageTitle:"Home", videos});
+}
 export const search = (req, res) => {
    // const searchingby =req.query.term;과 같다. 
     const {query: { term: searchingBy }} = req;
