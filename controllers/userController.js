@@ -12,7 +12,7 @@ export const postJoin = (req, res)=>{
         res.render("join", { pageTitle: "Join"});
     }else{
         // Todo: Register User
-        // Todo: Log user in
+        // Todo: Log user in ``
         res.redirect(routes.home);
     }
    };
