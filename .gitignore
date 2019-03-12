@@ -70,13 +70,11 @@ typings/
 .vuepress/dist
 
 # Serverless directories
-.serverless/
+.serverless
 
 # FuseBox cache
 .fusebox/
-
-# DynamoDB Local files
-.dynamodb/
-
 package-lock.json
-videos
+uploads
+static
+build
