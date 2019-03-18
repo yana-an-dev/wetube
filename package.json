@@ -8,8 +8,10 @@
   "dependencies": {
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.5.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
+    "css-loader": "^2.1.1",
     "dotenv": "^6.2.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -20,21 +22,25 @@
     "mongoose": "^5.4.18",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
     "pug": "^2.0.3",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.6"
   },
   "scripts": {
     "dev:server": "nodemon --exec ./node_modules/.bin/babel-node init.js --delay 2",
-    "dev:assets": "WEBPACK_ENV=development webpack",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "dev:assets": "webpack",
+    "build:assets": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/register": "^7.0.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.15.2",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "webpack-cli": "^3.3.0"
   }
 }
