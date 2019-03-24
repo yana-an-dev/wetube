@@ -40,7 +40,7 @@ export const postUpload = async (req, res) => {
     description
   });
 
-  res.render("upload", { pageTitle: "Upload" });
+  // res.render("upload", { pageTitle: "Upload" });
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
