@@ -25,4 +25,5 @@ export const onlyPrivate = (req, res, next) => {
     res.redirect(routes.home);
   }
 };
+
 export const uploadVideo = multerVideo.single("videoFile");
