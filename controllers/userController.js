@@ -1,6 +1,7 @@
 import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
+import { EDESTADDRREQ } from "constants";
 
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
@@ -40,7 +41,7 @@ export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
   const {
-    _json: { id, avatar_url, name, email }
+    _json: { id, avatar_url: avaterUrl, name, email }
   } = profile;
   try {
     const user = await User.findOne({ email });
@@ -53,7 +54,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
       email,
       name,
       githubId: id,
-      avatarUrl: avatar_url
+      avatarUrl
     });
     return cb(null, newUser);
   } catch (error) {
@@ -70,7 +71,11 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const users = (req, res) => res.render("users", { pageTitle: "Users" });
+export const me = (req, res) => {
+  res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+};
+//req.user는 현재 로그인된 사용자
+//이건 언제 없어진거지? export const users = (req, res) => res.render("users", { pageTitle: "Users" });
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "User Detail" });
 export const editProfile = (req, res) =>
