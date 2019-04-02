@@ -39,7 +39,7 @@
     "webpack": "^4.29.6"
   },
   "scripts": {
-    "dev:server": "nodemon --exec ./node_modules/.bin/babel-node init.js --delay 2 --ignore 'scss'",
+    "dev:server": "nodemon --exec ./node_modules/.bin/babel-node init.js --delay 2 --ignore '.scss' --ignore 'static",
     "dev:assets": "webpack -w",
     "build:assets": "webpack",
     "tunnel": "lt --port 4000"
